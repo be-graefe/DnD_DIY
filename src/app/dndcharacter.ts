@@ -1,0 +1,40 @@
+import {Spell} from "./spell";
+import {Weapon} from "./weapon";
+import {Language} from "./language";
+import {User} from "./user";
+import {Class} from "./class";
+import {Race} from "./race";
+
+export interface DndCharacter {
+  id: number;
+  name: string;
+  level: number;
+  proficiencyBonus: number;
+  armorClass: number;
+  initiative: number;
+  speed: number;
+  maxHitPoints: number;
+  currentHitPoints: number;
+  temporaryHitPoints: number;
+  strength: number;
+  dexterity: number;
+  constitution: number;
+  intelligence: number;
+  wisdom: number;
+  charisma: number;
+  deathSaveSuccess1: boolean;
+  deathSaveSuccess2: boolean;
+  deathSaveSuccess3: boolean;
+  deathSaveFailure1: boolean;
+  deathSaveFailure2: boolean;
+  deathSaveFailure3: boolean;
+  gold: number;
+  abilities: string;
+  equipment: string;
+  learnedSpells: Spell[];
+  ownedWeapons: Weapon[];
+  learnedLanguages: Language[];
+  user: User;
+  characterClass: Class;
+  race: Race;
+}

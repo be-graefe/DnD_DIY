@@ -10,7 +10,8 @@ import {DndCharacterService} from "./dndcharacter.service";
 export class AppComponent implements OnInit{
   title = 'DnD_DIY';
   public dndCharacters: DndCharacter[];
-
+  public isCardHovered: boolean = false;
+  public tempCharacter: DndCharacter;
   constructor(private characterService: DndCharacterService) {}
 
   public getCharacters(): void {
@@ -27,5 +28,10 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void {
     this.getCharacters();
+  }
+
+  onMouseOverCard(character: DndCharacter) {
+    this.tempCharacter = character;
+    this.isCardHovered = true;
   }
 }

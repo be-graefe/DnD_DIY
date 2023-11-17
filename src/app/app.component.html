@@ -1,3 +1,15 @@
-<div class="log-in">
+<div class="top-nav">
 
+</div>
+<div id="background">
+  <div class="characters-all">
+    <div *ngFor="let character of dndCharacters" class="card">
+      <figure>
+        <img src="./assets/squid.jpg" alt="{{character.name}}" (click)="getCharacterSheet(character.id)">
+        <figcaption>
+          <h5>{{character.name}}</h5>
+        </figcaption>
+      </figure>
+    </div>
+  </div>
 </div>

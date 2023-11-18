@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {DndCharacter} from "./dndcharacter";
 import {DndCharacterService} from "./dndcharacter.service";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class AppComponent implements OnInit{
   public dndCharacters: DndCharacter[];
   public isCardHovered: boolean = false;
   public tempCharacter: DndCharacter;
+
   constructor(private characterService: DndCharacterService) {}
 
   public getCharacters(): void {
@@ -22,7 +24,7 @@ export class AppComponent implements OnInit{
     );
   }
 
-  public getCharacterSheet(id: number): void {
+  public getCharacterSheet(character: DndCharacter): void {
 
   }
 
@@ -30,8 +32,16 @@ export class AppComponent implements OnInit{
     this.getCharacters();
   }
 
-  onMouseOverCard(character: DndCharacter) {
+  onMouseOverCard(character: DndCharacter): void {
     this.tempCharacter = character;
     this.isCardHovered = true;
+  }
+
+  toggleMenu(): void {
+    document.body.classList.toggle('menu-open');
+  }
+
+  addCharacter(addForm: NgForm) {
+
   }
 }

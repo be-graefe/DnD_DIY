@@ -88,6 +88,7 @@ figcaption {
 .stats {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   width: 100vw;
   position: absolute;
   top: 85%;
@@ -99,4 +100,63 @@ figcaption {
 .card-hovered {
   transform: translateY(-16px);
   color: #d5d5d5;
+}
+
+.overlay {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgb(27 32 44 / 70%);
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+}
+
+body.menu-open .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+aside {
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  right: 0;
+  width: 37%;
+  height: 100%;
+  padding: 20px;
+  background: #635975;
+  box-shadow:
+    0 0 20px
+    rgba(0 0 0 / 70%);
+  translate: 100% 0;
+  transition: 0.3s ease-in-out;
+}
+
+body.menu-open aside {
+  translate: 0;
+}
+
+aside #close {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 50px;
+  height: 50px;
+  background-size: contain;
+  border: none;
+  cursor: pointer;
+}
+
+#add-new-character-form {
+  padding-top: 70px;
+}
+
+.scores {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }

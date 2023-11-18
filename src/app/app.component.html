@@ -1,18 +1,68 @@
 <div id="background">
   <div class="characters-all">
+    <div class="overlay"></div>
     <div id="new-character" class="card">
       <figure>
-        <img src="./assets/+.png" alt="new character">
+        <img id="add-new-character" src="./assets/+.png" alt="new character" (click)="toggleMenu()">
         <figcaption>
           <h5>New Character</h5>
         </figcaption>
       </figure>
     </div>
+    <aside>
+      <img id="close" src="./assets/x.png" alt="close" (click)="toggleMenu()">
+      <div class="form-content">
+        <form id="add-new-character-form" #addForm="ngForm" (ngSubmit)="addCharacter(addForm)">
+          <div class="misc-input">
+            <label for="name">Name</label>
+            <input type="text" ngModel name="name" id="name" class="form-control" placeholder="Name..." required>
+            <label for="level">Level</label>
+            <input type="number" ngModel name="level" id="level" class="form-control" placeholder="Level..." required>
+            <label for="maxHitPoints">Maximum HP</label>
+            <input type="number" ngModel name="maxHitPoints" id="maxHitPoints" class="form-control"
+                   placeholder="Maximum HP..." required>
+          </div>
+          <div class="scores">
+            <div class="score-input">
+              <label for="strength">Strength</label>
+              <input type="number" ngModel name="strength" id="strength" class="form-control" placeholder="Strength..."
+                     required>
+            </div>
+            <div class="score-input">
+              <label for="dexterity">Dexterity</label>
+              <input type="number" ngModel name="dexterity" id="dexterity" class="form-control"
+                     placeholder="Dexterity..."
+                     required>
+            </div>
+            <div class="score-input">
+              <label for="constitution">Constitution</label>
+              <input type="number" ngModel name="constitution" id="constitution" class="form-control"
+                     placeholder="Constitution..." required>
+            </div>
+            <div class="score-input">
+              <label for="intelligence">Intelligence</label>
+              <input type="number" ngModel name="intelligence" id="intelligence" class="form-control"
+                     placeholder="Intelligence..." required>
+            </div>
+            <div class="score-input">
+              <label for="wisdom">Wisdom</label>
+              <input type="number" ngModel name="wisdom" id="wisdom" class="form-control" placeholder="Wisdom..."
+                      required></div>
+            <div class="score-input">
+              <label for="charisma">Charisma</label>
+              <input type="number" ngModel name="charisma" id="charisma" class="form-control" placeholder="Charisma..."
+                     required>
+            </div>
+          </div>
+          <button [disabled]="addForm.invalid" id="add-character" type="submit">Add Character</button>
+        </form>
+      </div>
+    </aside>
     <div *ngFor="let character of dndCharacters" class="card"
          (mouseover)="onMouseOverCard(character)"
          (mouseout)="isCardHovered = false">
       <figure>
-        <img src="./assets/squid.jpg" alt="{{character.name}}" (click)="getCharacterSheet(character.id)">
+        <img src="./assets/squid.jpg" alt="{{character.name}}" (click)="getCharacterSheet(character)">
         <img id="delete" src="./assets/x.png" alt="delete">
         <figcaption>
           <h5>{{character.name}}</h5>

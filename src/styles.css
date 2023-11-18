@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+body.menu-open .overlay {
+  visibility: visible;
+  opacity: 1;
+}
+
+body.menu-open aside {
+  translate: 0;
+}

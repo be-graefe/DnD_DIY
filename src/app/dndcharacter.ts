@@ -22,6 +22,12 @@ export interface DndCharacter {
   intelligence: number;
   wisdom: number;
   charisma: number;
+  strengthModifier: number;
+  dexterityModifier: number;
+  constitutionModifier: number;
+  intelligenceModifier: number;
+  wisdomModifier: number;
+  charismaModifier: number;
   deathSaveSuccess1: boolean;
   deathSaveSuccess2: boolean;
   deathSaveSuccess3: boolean;

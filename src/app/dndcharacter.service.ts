@@ -16,7 +16,7 @@ export class DndCharacterService {
     return this.http.get<DndCharacter[]>(`${this.apiServerUrl}/character/all`);
   }
 
-  public addCharacters(dndcharacter: DndCharacter): Observable<DndCharacter> {
+  public addCharacter(dndcharacter: DndCharacter): Observable<DndCharacter> {
     return this.http.post<DndCharacter>(`${this.apiServerUrl}/character/add`, dndcharacter);
   }
 
@@ -24,7 +24,7 @@ export class DndCharacterService {
     return this.http.put<DndCharacter>(`${this.apiServerUrl}/character/update`, dndcharacter);
   }
 
-  public deleteCharacters(dndcharacterId: number): Observable<void> {
+  public deleteCharacter(dndcharacterId: number): Observable<void> {
     return this.http.delete<void>(`${this.apiServerUrl}/character/delete/${dndcharacterId}`);
   }
 }

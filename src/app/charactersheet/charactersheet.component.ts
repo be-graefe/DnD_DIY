@@ -3,6 +3,7 @@ import {DndCharacterService} from "../dndcharacter.service";
 import {Router} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
 import {DndCharacter} from "../dndcharacter";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-charactersheet',
@@ -21,5 +22,15 @@ export class CharactersheetComponent {
     } else {
       this.router.navigate(['/not-found']);
     }
+  }
+
+  public updateCharacter(updateForm: NgForm): void {
+    updateForm.value.id = this.dndCharacter.id;
+    this.characterService.updateCharacters(updateForm.value).subscribe(
+      (response: DndCharacter) => {
+        console.log(response);
+        this.router.navigate(['']);
+      }
+    );
   }
 }

@@ -1,0 +1,76 @@
+.charactersheet {
+  width: 100%;
+  height: 100%;
+  background-color: #FFEFBD;
+}
+
+.character-head {
+  display: flex;
+  position: sticky;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+}
+
+.character-stats {
+  margin: 3rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 1rem;
+}
+
+.stat label {
+  font-weight: bold;
+}
+
+.stat-value {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #EEE5E9;
+  border: 2px solid #11151C;
+  border-radius: 50%;
+  width: 7rem;
+  margin-top: 0.5rem;
+}
+
+.stat-value input {
+  background-color: #EEE5E9;
+  border: none;
+  border-radius: 0;
+}
+
+.score input {
+  border: 2px solid #11151C;
+  border-radius: 50%;
+  position: relative;
+  font-size: small;
+  width: 4rem;
+  text-align: center;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.score input:focus {
+  outline: none;
+}
+
+.modifier input {
+  font-size: xx-large;
+  background-color: transparent;
+  text-align: center;
+  width: 5rem;
+}

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {AfterViewInit, ChangeDetectorRef, Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {DndCharacterService} from "../dndcharacter.service";
 import {Router} from "@angular/router";
 import {CookieService} from "ngx-cookie-service";
@@ -10,18 +10,14 @@ import {NgForm} from "@angular/forms";
   templateUrl: './charactersheet.component.html',
   styleUrls: ['./charactersheet.component.css']
 })
-export class CharactersheetComponent {
+export class CharactersheetComponent implements AfterViewInit, OnInit, OnChanges {
   public dndCharacter: DndCharacter;
 
   constructor(private characterService: DndCharacterService,
               private router: Router,
-              private cookieService: CookieService) {
-    const storedCharacter = this.cookieService.get('selectedCharacter');
-    if (storedCharacter) {
-      this.dndCharacter = JSON.parse(storedCharacter);
-    } else {
-      this.router.navigate(['/not-found']);
-    }
+              private cookieService: CookieService,
+              private cdr: ChangeDetectorRef) {
+
   }
 
   public updateCharacter(updateForm: NgForm): void {
@@ -32,5 +28,24 @@ export class CharactersheetComponent {
         this.router.navigate(['']);
       }
     );
+  }
+
+  ngAfterViewInit() {
+    this.cdr.detectChanges();
+  }
+
+  ngOnInit(): void {
+    const storedCharacter = this.cookieService.get('selectedCharacter');
+    if (storedCharacter) {
+      this.dndCharacter = JSON.parse(storedCharacter);
+    } else {
+      this.router.navigate(['/not-found']);
+    }
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['dndCharacter']) {
+      this.cdr.detectChanges();
+    }
   }
 }

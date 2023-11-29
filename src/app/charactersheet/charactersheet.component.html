@@ -1,5 +1,4 @@
 <div class="charactersheet">
-
   <form id="update-character-form" #updateForm="ngForm" (ngSubmit)="updateCharacter(updateForm)">
     <button type="submit" class="submit-update-character">Save and Exit</button>
     <section class="character-head">
@@ -9,48 +8,92 @@
       </div>
       <div class="character-misc">
         <div class="character-class">
-          <label for="class">Class</label>
-          <p id="class">{{dndCharacter.characterClass.name}}</p>
+<!--          <label for="class">Class</label>-->
+<!--          <p id="class">{{dndCharacter.characterClass.name}}</p>-->
         </div>
         <div class="character-race">
-          <label for="race">Race</label>
-          <p id="race">{{dndCharacter.race.name}}</p>
+<!--          <label for="race">Race</label>-->
+<!--          <p id="race">{{dndCharacter.race.name}}</p>-->
         </div>
       </div>
       <div class="character-level">
         <label for="level">Level</label>
-        <input ngModel class="form-control" id="level" name="level" type="text" [(ngModel)]="dndCharacter.level">
+        <input ngModel class="form-control" id="level" name="level" type="number" [(ngModel)]="dndCharacter.level">
       </div>
       <div class="character-stats">
         <div class="stat">
           <label>Strength</label>
-          <input ngModel class="form-control" name="strength" type="number" [(ngModel)]="dndCharacter.strength">
-          <input ngModel class="form-control" name="strengthModifier" type="number" [(ngModel)]="dndCharacter.strengthModifier">
+          <div class="stat-value">
+            <div class="score">
+              <input ngModel class="form-control" name="strength" type="number" [(ngModel)]="dndCharacter.strength">
+            </div>
+            <div class="modifier">
+              <input ngModel class="form-control" name="strengthModifier" type="number"
+                     [(ngModel)]="dndCharacter.strengthModifier">
+            </div>
+          </div>
         </div>
         <div class="stat">
           <label>Dexterity</label>
-          <input ngModel class="form-control" name="dexterity" type="number" [(ngModel)]="dndCharacter.dexterity">
-          <input ngModel class="form-control" name="dexterityModifier" type="number" [(ngModel)]="dndCharacter.dexterityModifier">
+          <div class="stat-value">
+            <div class="score">
+              <input ngModel class="form-control" name="dexterity" type="number" [(ngModel)]="dndCharacter.dexterity">
+            </div>
+            <div class="modifier">
+              <input ngModel class="form-control" name="dexterityModifier" type="number"
+                     [(ngModel)]="dndCharacter.dexterityModifier">
+            </div>
+          </div>
         </div>
         <div class="stat">
           <label>Constitution</label>
-          <input ngModel class="form-control" name="constitution" type="number" [(ngModel)]="dndCharacter.constitution">
-          <input ngModel class="form-control" name="constitutionModifier" type="number" [(ngModel)]="dndCharacter.constitutionModifier">
+          <div class="stat-value">
+            <div class="score">
+              <input ngModel class="form-control" name="constitution" type="number"
+                     [(ngModel)]="dndCharacter.constitution">
+            </div>
+            <div class="modifier">
+              <input ngModel class="form-control" name="constitutionModifier" type="number"
+                     [(ngModel)]="dndCharacter.constitutionModifier">
+            </div>
+          </div>
         </div>
         <div class="stat">
           <label>Intelligence</label>
-          <input ngModel class="form-control" name="intelligence" type="number" [(ngModel)]="dndCharacter.intelligence">
-          <input ngModel class="form-control" name="intelligenceModifier" type="number" [(ngModel)]="dndCharacter.intelligenceModifier">
+          <div class="stat-value">
+            <div class="score">
+              <input ngModel class="form-control" name="intelligence" type="number"
+                     [(ngModel)]="dndCharacter.intelligence">
+            </div>
+            <div class="modifier">
+              <input ngModel class="form-control" name="intelligenceModifier" type="number"
+                     [(ngModel)]="dndCharacter.intelligenceModifier">
+            </div>
+          </div>
         </div>
         <div class="stat">
           <label>Wisdom</label>
-          <input ngModel class="form-control" name="wisdom" type="number" [(ngModel)]="dndCharacter.strength">
-          <input ngModel class="form-control" name="wisdomModifier" type="number" [(ngModel)]="dndCharacter.wisdomModifier">
+          <div class="stat-value">
+            <div class="score">
+              <input ngModel class="form-control" name="wisdom" type="number" [(ngModel)]="dndCharacter.wisdom">
+            </div>
+            <div class="modifier">
+              <input ngModel class="form-control" name="wisdomModifier" type="number"
+                     [(ngModel)]="dndCharacter.wisdomModifier">
+            </div>
+          </div>
         </div>
         <div class="stat">
           <label>Charisma</label>
-          <input ngModel class="form-control" name="charisma" type="number" [(ngModel)]="dndCharacter.strength">
-          <input ngModel class="form-control" name="charismaModifier" type="number" [(ngModel)]="dndCharacter.charismaModifier">
+          <div class="stat-value">
+            <div class="score">
+              <input ngModel class="form-control" name="charisma" type="number" [(ngModel)]="dndCharacter.charisma">
+            </div>
+            <div class="modifier">
+              <input ngModel class="form-control" name="charismaModifier" type="number"
+                     [(ngModel)]="dndCharacter.charismaModifier">
+            </div>
+          </div>
         </div>
       </div>
     </section>

@@ -5,7 +5,7 @@
 }
 
 #background {
-  background-color: #010221;
+  background-color: #11151C;
   display: grid;
   place-items: center;
   height: 100vh;
@@ -20,7 +20,7 @@
   left: 0;
   width: 220px;
   height: 320px;
-  background-color: #010221;
+  background-color: #11151C;
   border-radius: 32px;
   transition: 0.2s ease-in-out;
   overflow: visible;
@@ -40,7 +40,7 @@
 }
 
 #new-character:hover {
-  background-color: white;
+  background-color: #FFEFBD;
 }
 
 figcaption {
@@ -89,7 +89,7 @@ figcaption {
   position: absolute;
   top: 85%;
   right: 0;
-  color: #010221;
+  color: #11151C;
   transition: 0.3s ease-in-out;
 }
 
@@ -125,7 +125,7 @@ aside {
   width: 37%;
   height: 100%;
   padding: 20px;
-  background: #181946;
+  background: #648381;
   box-shadow:
     0 0 20px
     rgba(0 0 0 / 70%);

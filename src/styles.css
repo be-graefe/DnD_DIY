@@ -7,3 +7,13 @@ body.menu-open .overlay {
 body.menu-open aside {
   translate: 0;
 }
+
+html {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}

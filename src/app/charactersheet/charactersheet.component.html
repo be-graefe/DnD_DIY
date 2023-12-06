@@ -8,12 +8,12 @@
       </div>
       <div class="character-misc">
         <div class="character-class">
-<!--          <label for="class">Class</label>-->
-<!--          <p id="class">{{dndCharacter.characterClass.name}}</p>-->
+          <label for="class">Class</label>
+          <p id="class" *ngIf="dndCharacter?.characterClass">{{dndCharacter.characterClass.name}}</p>
         </div>
         <div class="character-race">
-<!--          <label for="race">Race</label>-->
-<!--          <p id="race">{{dndCharacter.race.name}}</p>-->
+          <label for="race">Race</label>
+          <p id="race" *ngIf="dndCharacter?.race">{{dndCharacter.race.name}}</p>
         </div>
       </div>
       <div class="character-level">
